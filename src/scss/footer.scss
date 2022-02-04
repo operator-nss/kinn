@@ -1,0 +1,198 @@
+.footer {
+   @include adaptiveValue("padding-top", 64, 20);
+   @include adaptiveValue("padding-bottom", 102, 30);
+   background: #717353;
+   color: #ffffef;
+
+   // .footer__container
+
+   &__container {
+   }
+
+   // .footer__body
+
+   &__body {
+      display: flex;
+      margin: 0px rem(-15);
+      flex-wrap: wrap;
+      @media (max-width: $mobile) {
+         padding: rem(42) 0px rem(60) 0px;
+         justify-content: center;
+      }
+   }
+
+   // .footer__column
+
+   &__column {
+      @media (max-width: $mobile) {
+         &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 70, 10, 767, 320, 1);
+         }
+      }
+   }
+}
+.column-footer {
+   display: flex;
+   flex-direction: column;
+   flex: 0 1 25%;
+   padding: 0px rem(15);
+   @media (max-width: $mobile) {
+      flex: 0 1 33.333%;
+   }
+   @media (max-width: em(555)) {
+      flex: 1 1 100%;
+   }
+
+
+   // .column-footer_small
+
+   &_small {
+      flex: 0 1 25%;
+      align-items: end;
+      @media (max-width: $mobile) {
+         flex: 1 1 100%;
+         justify-content: center;
+         align-items: center;
+         margin: 0px 0px rem(20) 0px;
+      }
+   }
+
+   &_copy {
+      @media (max-width: em(555)) {
+         flex: 1 1 100%;
+         text-align: center;
+         justify-content: center;
+         align-items: center;
+      }
+      @media (max-width: $mobile) {
+         flex: 1 1 auto;
+         align-items: center;
+      }
+   }
+
+   // .column-footer__title
+
+   &__title {
+      color: #ffffef;
+      font-size: rem(16);
+      line-height: math.div(25, 16);
+      position: relative;
+      margin-bottom: rem(40);
+      @media (any-hover: hover) {
+         &:hover {
+            text-decoration: underline;
+         }
+      }
+      &::before {
+         display: none;
+      }
+      &._icon-arrow-bottom {
+         @media (max-width: $mobile) {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            &::after {
+               content: "";
+               top: rem(20);
+               left: 0;
+            }
+            &::before {
+               display: block;
+               transition: all 0.3s ease 0s;
+            }
+         }
+      }
+
+      span {
+         text-transform: uppercase;
+      }
+      &::after {
+         content: "";
+         display: block;
+         position: absolute;
+         height: rem(1);
+         background: #ffffef;
+         width: rem(40);
+         margin: rem(15) 0px;
+         @media (max-width: em(767.98)) {
+            width: 100%;
+            opacity: 0.3;
+         }
+      }
+      &._spoller-active {
+         &::before {
+            transform: rotate(-180deg);
+         }
+      }
+   }
+
+   // .column-footer__text
+
+   &__text {
+      font-size: rem(16);
+      line-height: math.div(25, 16);
+   }
+
+   // .column-footer__social
+
+   &__social {
+      display: flex;
+      color: #000;
+      // .column-footer__social_item
+
+      &_item {
+         &:not(:last-child) {
+            margin-right: rem(20);
+         }
+         transition: all 0.3s ease 0s;
+
+         @media (any-hover: hover) {
+            &:hover {
+               transform: scale(1.4);
+               color: #71E4F6;
+            }
+         }
+      }
+   }
+}
+
+//========================================================================================================================================================
+
+.column-footer-spollers {
+   // .column-footer-spollers__item
+
+   &__item {
+      text-transform: uppercase;
+      font-size: rem(16);
+      line-height: math.div(25, 16);
+      letter-spacing: 1.575px;
+      color: #ffffef;
+      &:not(:last-child) {
+         margin-bottom: rem(10);
+      }
+   }
+
+   // .column-footer-spollers__title
+
+   &__title {
+   }
+
+   // .column-footer-spollers__list
+
+   &__list {
+   }
+
+   // .column-footer-spollers__link
+
+   &__link {
+      @media (any-hover: hover) {
+         &:hover {
+            text-decoration: underline;
+         }
+      }
+   }
+}
+
+//========================================================================================================================================================
